@@ -20,7 +20,11 @@ from app.models.user import User
 
 logger = logging.getLogger(__name__)
 
-MOCK_UDYAM_BASE_URL = os.getenv("MOCK_UDYAM_BASE_URL", "http://localhost:8001")
+_raw_udyam_url = os.getenv("MOCK_UDYAM_BASE_URL", "http://localhost:8001").rstrip("/")
+if _raw_udyam_url.endswith("/api/integrations/v1"):
+    MOCK_UDYAM_BASE_URL = _raw_udyam_url[:-len("/api/integrations/v1")]
+else:
+    MOCK_UDYAM_BASE_URL = _raw_udyam_url
 MOCK_UDYAM_API_KEY = os.getenv("MOCK_UDYAM_API_KEY", "demo-secret-sih26130-udyam-key")
 UDYAM_FRONTEND_URL = os.getenv("UDYAM_FRONTEND_URL", "http://localhost:5174")
 

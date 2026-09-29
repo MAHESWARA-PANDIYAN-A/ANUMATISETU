@@ -21,7 +21,11 @@ from app.models.user import User
 logger = logging.getLogger(__name__)
 
 # Primary and fallback base URLs
-MOCK_GST_BASE_URL = os.getenv("MOCK_GST_BASE_URL", "http://localhost:8003/api/integrations/v1")
+_raw_gst_url = os.getenv("MOCK_GST_BASE_URL", "http://localhost:8003").rstrip("/")
+if _raw_gst_url.endswith("/api/integrations/v1"):
+    MOCK_GST_BASE_URL = _raw_gst_url
+else:
+    MOCK_GST_BASE_URL = f"{_raw_gst_url}/api/integrations/v1"
 FALLBACK_GST_BASE_URL = "http://127.0.0.1:8003/api/integrations/v1"
 MOCK_GST_API_KEY = os.getenv("MOCK_GST_API_KEY", "gst_sih26130_secret_api_key_mock_2026")
 

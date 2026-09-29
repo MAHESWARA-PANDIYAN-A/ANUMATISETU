@@ -20,8 +20,13 @@ from app.models.user import User
 
 logger = logging.getLogger(__name__)
 
-MOCK_FSSAI_BASE_URL = os.getenv("MOCK_FSSAI_BASE_URL", "http://127.0.0.1:8002")
-MOCK_FSSAI_INTEGRATION_URL = f"{MOCK_FSSAI_BASE_URL}/api/integrations/v1"
+_raw_fssai_url = os.getenv("MOCK_FSSAI_BASE_URL", "http://127.0.0.1:8002").rstrip("/")
+if _raw_fssai_url.endswith("/api/integrations/v1"):
+    MOCK_FSSAI_BASE_URL = _raw_fssai_url[:-len("/api/integrations/v1")]
+    MOCK_FSSAI_INTEGRATION_URL = _raw_fssai_url
+else:
+    MOCK_FSSAI_BASE_URL = _raw_fssai_url
+    MOCK_FSSAI_INTEGRATION_URL = f"{_raw_fssai_url}/api/integrations/v1"
 MOCK_FSSAI_API_KEY = os.getenv("MOCK_FSSAI_API_KEY", "fssai-mock-secret-key-2026")
 
 FSSAI_HEADERS = {
