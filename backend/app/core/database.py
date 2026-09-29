@@ -5,23 +5,33 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+import os
+
 # Normalize Database URL for Render / PostgreSQL
-db_url = settings.DATABASE_URL
+db_url = settings.DATABASE_URL or ""
 if db_url.startswith("postgres://"):
     db_url = db_url.replace("postgres://", "postgresql+psycopg2://", 1)
 elif db_url.startswith("postgresql://") and not db_url.startswith("postgresql+"):
     db_url = db_url.replace("postgresql://", "postgresql+psycopg2://", 1)
 
-# SQLAlchemy Engine
+# Test PostgreSQL connection; if unreachable (e.g. unconfigured localhost on Render), fallback to SQLite
 connect_args = {}
 if db_url.startswith("sqlite"):
     connect_args = {"check_same_thread": False}
 
-engine = create_engine(
-    db_url,
-    connect_args=connect_args,
-    pool_pre_ping=True
-)
+try:
+    if db_url.startswith("postgresql"):
+        temp_engine = create_engine(db_url, connect_args=connect_args, pool_pre_ping=True)
+        with temp_engine.connect() as test_conn:
+            test_conn.execute(text("SELECT 1"))
+        engine = temp_engine
+    else:
+        engine = create_engine(db_url, connect_args=connect_args, pool_pre_ping=True)
+except Exception as conn_err:
+    logger.warning(f"Could not connect to PostgreSQL ({conn_err}). Falling back to local SQLite database.")
+    db_url = "sqlite:///./tasker_platform.db"
+    connect_args = {"check_same_thread": False}
+    engine = create_engine(db_url, connect_args=connect_args, pool_pre_ping=True)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

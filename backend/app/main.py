@@ -18,47 +18,48 @@ logger = logging.getLogger("sih26130_backend")
 def ensure_schema_updates():
     try:
         Base.metadata.create_all(bind=engine)
-        with engine.connect() as conn:
-            conn.execute(text("""
-                ALTER TABLE applications ADD COLUMN IF NOT EXISTS expected_completion_date TIMESTAMP;
-                ALTER TABLE applications ADD COLUMN IF NOT EXISTS decision_at TIMESTAMP;
-                ALTER TABLE applications ADD COLUMN IF NOT EXISTS completed_at TIMESTAMP;
-                
-                ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS submitted_at TIMESTAMP;
-                ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS expected_completion_date TIMESTAMP;
-                ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS inspection_required BOOLEAN DEFAULT FALSE;
-                ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS inspection_date TIMESTAMP;
-                ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS completed_at TIMESTAMP;
-                
-                ALTER TABLE inspections ADD COLUMN IF NOT EXISTS scheduled_time VARCHAR(50);
-                ALTER TABLE inspections ADD COLUMN IF NOT EXISTS location VARCHAR(500);
+        if engine.dialect.name == "postgresql":
+            with engine.connect() as conn:
+                conn.execute(text("""
+                    ALTER TABLE applications ADD COLUMN IF NOT EXISTS expected_completion_date TIMESTAMP;
+                    ALTER TABLE applications ADD COLUMN IF NOT EXISTS decision_at TIMESTAMP;
+                    ALTER TABLE applications ADD COLUMN IF NOT EXISTS completed_at TIMESTAMP;
+                    
+                    ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS submitted_at TIMESTAMP;
+                    ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS expected_completion_date TIMESTAMP;
+                    ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS inspection_required BOOLEAN DEFAULT FALSE;
+                    ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS inspection_date TIMESTAMP;
+                    ALTER TABLE application_approvals ADD COLUMN IF NOT EXISTS completed_at TIMESTAMP;
+                    
+                    ALTER TABLE inspections ADD COLUMN IF NOT EXISTS scheduled_time VARCHAR(50);
+                    ALTER TABLE inspections ADD COLUMN IF NOT EXISTS location VARCHAR(500);
 
-                ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_application_number VARCHAR(50);
-                ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_status VARCHAR(50) DEFAULT 'NOT_STARTED';
-                ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_last_synced_at TIMESTAMP;
-                ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_officer_remarks TEXT;
-                ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_external_data JSONB;
+                    ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_application_number VARCHAR(50);
+                    ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_status VARCHAR(50) DEFAULT 'NOT_STARTED';
+                    ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_last_synced_at TIMESTAMP;
+                    ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_officer_remarks TEXT;
+                    ALTER TABLE applications ADD COLUMN IF NOT EXISTS fssai_external_data JSONB;
 
-                -- Document Storage & Cloudinary Metadata Extensions
-                ALTER TABLE documents ADD COLUMN IF NOT EXISTS storage_provider VARCHAR(50) DEFAULT 'CLOUDINARY';
-                ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_asset_id VARCHAR(255);
-                ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_public_id VARCHAR(500);
-                ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_resource_type VARCHAR(50) DEFAULT 'image';
-                ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_asset_type VARCHAR(50) DEFAULT 'authenticated';
-                ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_version VARCHAR(50);
-                ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_folder VARCHAR(255);
-                ALTER TABLE documents ADD COLUMN IF NOT EXISTS storage_status VARCHAR(50) DEFAULT 'ACTIVE';
-                ALTER TABLE documents ALTER COLUMN file_path DROP NOT NULL;
+                    -- Document Storage & Cloudinary Metadata Extensions
+                    ALTER TABLE documents ADD COLUMN IF NOT EXISTS storage_provider VARCHAR(50) DEFAULT 'CLOUDINARY';
+                    ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_asset_id VARCHAR(255);
+                    ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_public_id VARCHAR(500);
+                    ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_resource_type VARCHAR(50) DEFAULT 'image';
+                    ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_asset_type VARCHAR(50) DEFAULT 'authenticated';
+                    ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_version VARCHAR(50);
+                    ALTER TABLE documents ADD COLUMN IF NOT EXISTS cloudinary_folder VARCHAR(255);
+                    ALTER TABLE documents ADD COLUMN IF NOT EXISTS storage_status VARCHAR(50) DEFAULT 'ACTIVE';
+                    ALTER TABLE documents ALTER COLUMN file_path DROP NOT NULL;
 
-                ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_asset_id VARCHAR(255);
-                ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_public_id VARCHAR(500);
-                ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_resource_type VARCHAR(50) DEFAULT 'image';
-                ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_asset_type VARCHAR(50) DEFAULT 'authenticated';
-                ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_version VARCHAR(50);
-                ALTER TABLE document_versions ALTER COLUMN stored_filename DROP NOT NULL;
-                ALTER TABLE document_versions ALTER COLUMN storage_path DROP NOT NULL;
-            """))
-            conn.commit()
+                    ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_asset_id VARCHAR(255);
+                    ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_public_id VARCHAR(500);
+                    ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_resource_type VARCHAR(50) DEFAULT 'image';
+                    ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_asset_type VARCHAR(50) DEFAULT 'authenticated';
+                    ALTER TABLE document_versions ADD COLUMN IF NOT EXISTS cloudinary_version VARCHAR(50);
+                    ALTER TABLE document_versions ALTER COLUMN stored_filename DROP NOT NULL;
+                    ALTER TABLE document_versions ALTER COLUMN storage_path DROP NOT NULL;
+                """))
+                conn.commit()
         logger.info("Database schema columns verified and up-to-date.")
         seed_departments()
         seed_approval_intelligence_all()
@@ -189,7 +190,7 @@ app.include_router(api_router, prefix=settings.API_V1_STR)
 app.include_router(api_router, prefix="/api")
 
 
-@app.get("/", tags=["Root"])
+@app.api_route("/", methods=["GET", "HEAD"], tags=["Root"])
 def root_info():
     return {
         "project": settings.PROJECT_NAME,

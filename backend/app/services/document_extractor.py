@@ -5,8 +5,7 @@ import logging
 import os
 import re
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional, Tuple
-import fitz  # PyMuPDF
+import pymupdf as fitz
 from PIL import Image
 from app.core.config import settings
 from app.models.business_profile import BusinessProfile
