@@ -1,0 +1,46 @@
+[
+  {
+    "id": "doc-mpcb-categorization-2024",
+    "title": "MPCB Industrial Categorization & Pollution Consent Guidelines",
+    "department": "Maharashtra Pollution Control Board (MPCB)",
+    "source": "Water (Prevention & Control of Pollution) Act 1974, Air (Prevention & Control of Pollution) Act 1981, and CPCB Guidelines 2024",
+    "publication_date": "2024-03-01",
+    "last_verified_date": "2026-08-20",
+    "category": "Environmental Clearance",
+    "summary": "Statutory rules for classification of industrial units into Red, Orange, Green, and White categories based on pollution index, and requirements for Consent to Establish (CTE) and Consent to Operate (CTO).",
+    "content": "All industrial plants and manufacturing enterprises setting up operations in Maharashtra must obtain Consent to Establish (CTE) prior to commencement of factory construction or machinery installation, followed by Consent to Operate (CTO) prior to commercial production. Industrial units are classified into 4 categories: 1. Red Category (Pollution Index >= 60): High pollution potential, requires comprehensive EIA and CTE from MPCB HQ. 2. Orange Category (Pollution Index 41-59): Moderate pollution potential such as Food Processing with effluent discharge, agro-processing, textile dying. 3. Green Category (Pollution Index 21-40): Low pollution, handled by Sub-Regional Officers. 4. White Category (Pollution Index <= 20): Non-polluting micro-enterprises, exempt from consent but require self-intimation. Required documents for CTE: Comprehensive project report with manufacturing process flow chart, detailed water balance and material balance, design specifications of Effluent Treatment Plant (ETP) or Sewage Treatment Plant (STP), air pollution control systems (APCS) design for boilers and DG sets, MIDC land allotment letter or registered lease agreement, and capital investment certificate certified by Chartered Accountant. CTE is valid for 5 years or until commercial production begins."
+  },
+  {
+    "id": "doc-fire-safety-act-2023",
+    "title": "Maharashtra Fire Safety NOC Guidelines & Infrastructure Standards",
+    "department": "Directorate of Maharashtra Fire Services (MFS)",
+    "source": "Maharashtra Fire Prevention and Life Safety Measures Act 2006 (Amended 2023) and National Building Code of India (NBC 2016 Part 4)",
+    "publication_date": "2023-11-15",
+    "last_verified_date": "2026-09-01",
+    "category": "Fire & Life Safety",
+    "summary": "Mandatory guidelines for obtaining Provisional Fire NOC before building construction and Final Fire NOC before building occupancy.",
+    "content": "Every industrial structure exceeding 15 meters in height, or having built-up area exceeding 500 square meters, or handling hazardous, flammable, or combustible materials is legally required to obtain a Provisional Fire NOC from the Chief Fire Officer (CFO) or Maharashtra Fire Services prior to building plan sanction. Required documents: 1. Complete architectural layout drawings including site plan, floor plans, elevation, sectional views showing emergency exit staircases. 2. Hydraulic calculations for static water storage tank (minimum 50,000 to 200,000 liters based on hazard category). 3. Fire hydrant and sprinkler system schematics. 4. Smoke management and ventilation plans. 5. Process flow details indicating solvent/gas/boiler storage. Upon completion of civil construction and installation of certified fire protection systems, a joint inspection is conducted by fire officers. Compliance with NBC Part 4 norms yields the Final Fire NOC, which must be renewed annually with Form-B submission from a licensed fire agency."
+  },
+  {
+    "id": "doc-factories-act-license",
+    "title": "Factory License and Worker Safety Guidelines under Factories Act 1948",
+    "department": "Directorate of Industrial Safety & Health (DISH)",
+    "source": "Factories Act 1948, Section 6 & Maharashtra Factories Rules 1963",
+    "publication_date": "2024-01-10",
+    "last_verified_date": "2026-08-10",
+    "category": "Labour & Industrial Safety",
+    "summary": "Factory premises blueprint approval and statutory license for manufacturing units employing 10 or more workers with power, or 20 or more workers without power.",
+    "content": "Any manufacturing premises employing 10 or more workers where manufacturing process is carried on with aid of electrical power, or 20 or more workers without aid of power, must obtain factory license and factory plan approval from the Directorate of Industrial Safety & Health (DISH). The workflow comprises two phases: Phase 1 (Prior to construction): Factory Building Plan Approval under Rule 3. Documents required include flow diagrams, machine layout showing minimum 36 square feet floor area per worker, natural light and ventilation calculations, emergency fire exits, and structural stability certificate signed by certified structural engineer. Phase 2 (Prior to commencement of work): Application in Form 2 with Treasury Challan for statutory fees calculated based on installed horsepower (HP) and maximum worker count. License is issued in Form 4 and can be granted for 1 to 10 years."
+  },
+  {
+    "id": "doc-psi-2019-incentives",
+    "title": "Package Scheme of Incentives (PSI 2019) & Industrial Subsidies Policy",
+    "department": "Directorate of Industries, Government of Maharashtra",
+    "source": "Government Resolution No. PSI-2019/CR-46/IND-8, Industries, Energy and Labour Department",
+    "publication_date": "2019-06-15",
+    "last_verified_date": "2026-08-25",
+    "category": "Government Schemes & Incentives",
+    "summary": "Financial subsidies, industrial promotion subsidies, power tariff subsidies, and stamp duty exemptions for new and expanding industrial investments in Maharashtra.",
+    "content": "The Package Scheme of Incentives (PSI 2019) offers attractive fiscal incentives for Micro, Small, Medium Enterprises (MSMEs) and Large/Mega projects set up across Maharashtra, categorizing districts into Taluka zones A, B, C, D, D+, and Vidarbha/Marathwada/Naxalite affected areas (maximum incentives). Key incentives include: 1. Industrial Promotion Subsidy (IPS): Refund of Gross SGST payable on sales of finished products up to 100% of Eligible Capital Investment over 7 to 14 years depending on zone. 2. Interest Subsidy: 5% per annum on term loans for MSMEs (effective interest rate not less than 3%). 3. Electricity Duty Exemption: 100% exemption for 7 to 10 years. 4. Power Tariff Subsidy: ₹1 to ₹2 per unit for 3 years in designated backward zones. 5. Stamp Duty & Registration Fee Exemption: 100% exemption on land purchase, lease deed, and term loan hypothecation. Eligibility requirement: Enterprise must file application within 30 days of commercial production and possess valid Udyam Registration, Consent to Operate (CTO), and Term Loan Sanction Letter."
+  }
+]

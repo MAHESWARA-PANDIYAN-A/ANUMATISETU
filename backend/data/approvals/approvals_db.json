@@ -1,0 +1,184 @@
+[
+  {
+    "id": "mpcb-cte",
+    "approval_name": "Consent to Establish (CTE)",
+    "department": "Maharashtra Pollution Control Board (MPCB)",
+    "applicable_industries": [
+      "Food Processing",
+      "Manufacturing",
+      "Chemical & Petrochemical",
+      "Textiles & Garments",
+      "Pharmaceuticals",
+      "Engineering & Capital Goods",
+      "Agro-processing",
+      "ALL"
+    ],
+    "applicable_states": ["Maharashtra"],
+    "project_stages": [
+      "Ideation / Planning",
+      "Land Acquisition",
+      "Factory Construction",
+      "ALL"
+    ],
+    "investment_conditions": {
+      "min_investment": 0,
+      "max_investment": null,
+      "description": "Mandatory for all industrial units prior to initiating site work or construction."
+    },
+    "employee_conditions": {
+      "min_employees": 1,
+      "description": "All unit sizes categorized under Red, Orange, or Green pollution classifications."
+    },
+    "required_documents": [
+      "Detailed Project Report (DPR) including manufacturing process flow",
+      "Site Layout Plan and industrial area zoning certificate",
+      "Water balance sheet showing daily fresh water intake and trade effluent generation",
+      "Effluent Treatment Plant (ETP) / Sewage Treatment Plant (STP) design proposal",
+      "Air pollution control measures for boilers, generators, and chimney stacks",
+      "Land ownership deed / MIDC possession letter"
+    ],
+    "description": "Mandatory statutory clearance to establish any industrial plant, discharge effluent, or emit air pollutants under state environmental legislation.",
+    "source": "Water (Prevention & Control of Pollution) Act 1974, Section 25 & Air Act 1981, Section 21 - MPCB Citizen Charter",
+    "last_verified_date": "2026-08-10",
+    "category": "Pre-Establishment",
+    "is_mandatory": true,
+    "confidence_base": 0.98
+  },
+  {
+    "id": "cfo-fire-provisional",
+    "approval_name": "Provisional Fire NOC",
+    "department": "Chief Fire Officer (CFO) / Maharashtra Fire Services",
+    "applicable_industries": [
+      "Food Processing",
+      "Manufacturing",
+      "Chemical & Petrochemical",
+      "Textiles & Garments",
+      "Pharmaceuticals",
+      "Engineering & Capital Goods",
+      "Warehousing & Logistics",
+      "IT & Electronics",
+      "ALL"
+    ],
+    "applicable_states": ["Maharashtra"],
+    "project_stages": [
+      "Ideation / Planning",
+      "Land Acquisition",
+      "Factory Construction",
+      "ALL"
+    ],
+    "investment_conditions": {
+      "min_investment": 0,
+      "max_investment": null,
+      "description": "Required for all industrial building plan approvals."
+    },
+    "employee_conditions": {
+      "min_employees": 1,
+      "description": "Industrial occupancies requiring building approval."
+    },
+    "required_documents": [
+      "Architectural drawings showing building elevations, sections, and site layout",
+      "Fire fighting and suppression schematic drawings (hydrants, sprinklers, alarms)",
+      "Setback distances and access road widths for fire tenders (minimum 6m)",
+      "Water storage capacity details for static firefighting tanks",
+      "MIDC / Local planning authority building plan scrutiny receipt"
+    ],
+    "description": "Preliminary approval confirming that the proposed factory layout and building architecture conform to national and state fire safety codes.",
+    "source": "Maharashtra Fire Prevention and Life Safety Measures Act 2006 & NBC 2016 Part 4",
+    "last_verified_date": "2026-07-25",
+    "category": "Pre-Establishment",
+    "is_mandatory": true,
+    "confidence_base": 0.96
+  },
+  {
+    "id": "dish-factory-plan-approval",
+    "approval_name": "Factory Building & Machinery Layout Approval",
+    "department": "Directorate of Industrial Safety & Health (DISH)",
+    "applicable_industries": [
+      "Food Processing",
+      "Manufacturing",
+      "Chemical & Petrochemical",
+      "Textiles & Garments",
+      "Pharmaceuticals",
+      "Engineering & Capital Goods",
+      "Automotive & Auto Components",
+      "Agro-processing",
+      "ALL"
+    ],
+    "applicable_states": ["Maharashtra"],
+    "project_stages": [
+      "Ideation / Planning",
+      "Land Acquisition",
+      "Factory Construction",
+      "ALL"
+    ],
+    "investment_conditions": {
+      "min_investment": 0,
+      "max_investment": null,
+      "description": "All manufacturing premises engaging 10+ workers with power or 20+ without."
+    },
+    "employee_conditions": {
+      "min_employees": 10,
+      "description": "Threshold trigger: 10 or more workers with power or 20 or more without power."
+    },
+    "required_documents": [
+      "Form No. 1 (Application for permission to construct, extend, or take into use any building as a factory)",
+      "Flowchart of the manufacturing process with material safety data sheets (if chemical / boiler)",
+      "Detailed plant layout showing machinery spacing, gangways, emergency exits, and ventilation",
+      "Structural stability certificate signed by a competent structural engineer",
+      "Proof of ownership / lease of factory premises"
+    ],
+    "description": "Statutory pre-construction vetting of occupational safety, emergency exits, ventilation, and machinery spacing under the Factories Act.",
+    "source": "Factories Act 1948, Section 6 & Maharashtra Factory Rules 1963, Rule 3",
+    "last_verified_date": "2026-08-01",
+    "category": "Pre-Establishment",
+    "is_mandatory": true,
+    "confidence_base": 0.97
+  },
+  {
+    "id": "fssai-state-manufacturing-license",
+    "approval_name": "FSSAI Food Manufacturing License",
+    "department": "Food Safety and Standards Authority of India (FSSAI)",
+    "applicable_industries": [
+      "Food Processing",
+      "Agro-processing",
+      "Food & Beverage",
+      "Dairy Processing",
+      "Bakery & Confectionery",
+      "Edible Oil Refining",
+      "Meat & Poultry Processing"
+    ],
+    "applicable_states": ["Maharashtra", "ALL"],
+    "project_stages": [
+      "Ideation / Planning",
+      "Land Acquisition",
+      "Factory Construction",
+      "Machinery Installation",
+      "Pre-Commissioning",
+      "Operational Expansion",
+      "ALL"
+    ],
+    "investment_conditions": {
+      "min_investment": 0,
+      "max_investment": null,
+      "description": "Applies to all food businesses producing, processing, or packaging food products."
+    },
+    "employee_conditions": {
+      "min_employees": 1,
+      "description": "Mandatory for all food processing units regardless of workforce size."
+    },
+    "required_documents": [
+      "Layout plan of the processing unit showing dimensions and operational areas",
+      "List of Directors / Partners / Proprietor with full contact details and photo ID",
+      "List of machinery & equipment with installed production capacity",
+      "Water testing analysis report from an authorized / NABL accredited laboratory",
+      "Source of raw materials and food safety management system (FSMS) plan",
+      "NOC / Proof of possession of premises (Rent agreement / Lease deed / MIDC allotment)"
+    ],
+    "description": "Statutory license required before commencing manufacturing, processing, or packaging of any food product under the Food Safety and Standards Act.",
+    "source": "Food Safety and Standards Act 2006, Section 31 & Licensing Regulations 2011",
+    "last_verified_date": "2026-08-15",
+    "category": "Pre-Operation",
+    "is_mandatory": true,
+    "confidence_base": 0.99
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "scheme-psi-2019",
+    "scheme_name": "Package Scheme of Incentives (PSI 2019 / 2024)",
+    "department": "Directorate of Industries, Government of Maharashtra",
+    "state": "Maharashtra",
+    "applicable_industries": [
+      "Food Processing",
+      "Agro-processing",
+      "Manufacturing",
+      "Textiles & Garments",
+      "Chemical & Petrochemical",
+      "Pharmaceuticals",
+      "Engineering & Capital Goods",
+      "Automotive & Auto Components",
+      "Electronics & IT Hardware",
+      "ALL"
+    ],
+    "business_types": [
+      "Private Limited Company",
+      "Public Limited Company",
+      "Limited Liability Partnership (LLP)",
+      "Partnership Firm",
+      "Sole Proprietorship"
+    ],
+    "project_stages": [
+      "Pre-Construction",
+      "Under Construction",
+      "Machinery Installation",
+      "Operational Expansion",
+      "ALL"
+    ],
+    "investment_conditions": {
+      "min_investment": 1000000.0,
+      "max_investment": null,
+      "description": "Applies to Micro, Small, Medium Enterprises (MSMEs) and Large industrial units with minimum eligible fixed capital investment of ₹10 Lakhs."
+    },
+    "eligibility_conditions": [
+      "New manufacturing unit or existing unit undertaking minimum 25% expansion in fixed capital investment in Maharashtra",
+      "Must obtain Udyam Registration Certificate and Consent to Operate (CTO) from MPCB",
+      "Application must be submitted within 30 days of commencing commercial production",
+      "Unit must be situated in categorized industrial taluka zones (A, B, C, D, D+, or Vidarbha/Marathwada)"
+    ],
+    "benefits": [
+      "Industrial Promotion Subsidy (IPS): Refund of 60% to 100% of Gross State GST (SGST) paid on sales of finished goods for 7 to 14 years",
+      "Interest Subvention: 5% per annum on term loan interest for MSMEs (capped at ₹50 Lakhs/year)",
+      "Power Tariff Subsidy: ₹1.00 to ₹2.00 per unit reduction on industrial electricity tariff for 3 to 5 years in C, D, and D+ zones",
+      "Electricity Duty Exemption: 100% waiver on electricity duty for 7 to 10 years",
+      "Stamp Duty & Registration Fee Exemption: 100% waiver on land purchase, long-term lease deed, and loan hypothecation"
+    ],
+    "required_documents": [
+      "Udyam Registration Certificate / Industrial Entrepreneur Memorandum (IEM)",
+      "Detailed Project Report (DPR) certified by a Chartered Accountant",
+      "Consent to Establish (CTE) & Consent to Operate (CTO) from MPCB",
+      "Land Ownership Document (MIDC Allotment Letter / Registered Sale Deed / Registered Lease Deed)",
+      "Term Loan Sanction Letter and Bank Disbursement Certificate",
+      "Chartered Accountant Certificate of Eligible Fixed Capital Investment (Gross Plant & Machinery)"
+    ],
+    "source": "Government Resolution No. PSI-2019/CR-46/IND-8, Industries, Energy and Labour Department, Maharashtra",
+    "last_verified_date": "2026-08-25"
+  },
+  {
+    "id": "scheme-pmfme-mofpi",
+    "scheme_name": "PM Formalisation of Micro food processing Enterprises (PMFME)",
+    "department": "Ministry of Food Processing Industries (MoFPI) & Maharashtra State Food Processing Mission",
+    "state": "Maharashtra",
+    "applicable_industries": [
+      "Food Processing",
+      "Agro-processing",
+      "Dairy Processing",
+      "Bakery & Confectionery",
+      "Edible Oil Refining",
+      "Meat & Poultry Processing",
+      "Beverage Manufacturing"
+    ],
+    "business_types": [
+      "Sole Proprietorship",
+      "Partnership Firm",
+      "Limited Liability Partnership (LLP)",
+      "Private Limited Company",
+      "Farmer Producer Organization (FPO)",
+      "Self Help Group (SHG)"
+    ],
+    "project_stages": [
+      "Ideation / Planning",
+      "Pre-Construction",
+      "Machinery Installation",
+      "Operational Expansion",
+      "ALL"
+    ],
+    "investment_conditions": {
+      "min_investment": 200000.0,
+      "max_investment": 30000000.0,
+      "description": "Aimed at micro food processing units with project outlay up to ₹3 Crore (eligible grant capped at ₹10 Lakhs per unit)."
+    },
+    "eligibility_conditions": [
+      "Enterprise must be engaged in micro food processing / value-addition of agricultural or horticultural produce",
+      "Individual micro food enterprise ownership with minimum 10% promoter contribution",
+      "Priority given to One District One Product (ODOP) produce (e.g. Sugarcane/Jaggery in Pune, Onion in Nashik, Grapes in Sangli)",
+      "Must have or agree to obtain basic FSSAI registration/license"
+    ],
+    "benefits": [
+      "Credit-Linked Capital Subsidy of 35% of eligible project cost with a ceiling of ₹10 Lakhs per enterprise",
+      "Seed Capital support of ₹40,000 per SHG member for working capital and small tool purchases",
+      "50% grant for Common Infrastructure, testing laboratories, and cold storage setup by FPOs/Cooperatives",
+      "50% subsidy for branding, marketing, and packaging standardization"
+    ],
+    "required_documents": [
+      "Identity and Address Proof of Applicant / Partners / Directors",
+      "Bank Account Statements for the last 6 months",
+      "FSSAI License / Registration or undertaking to obtain within 6 months",
+      "Quotations for food processing plant and machinery",
+      "Detailed Project Estimate / Quotations for civil works and equipment",
+      "Proof of premises ownership / Lease agreement"
+    ],
+    "source": "PMFME Scheme Guidelines, Ministry of Food Processing Industries, Government of India (MoFPI)",
+    "last_verified_date": "2026-08-15"
+  },
+  {
+    "id": "scheme-pmegp-kvic",
+    "scheme_name": "Prime Minister's Employment Generation Programme (PMEGP)",
+    "department": "Ministry of Micro, Small and Medium Enterprises (MoMSME) / KVIC",
+    "state": "Maharashtra",
+    "applicable_industries": [
+      "Manufacturing",
+      "Food Processing",
+      "Agro-processing",
+      "Textiles & Garments",
+      "Engineering & Capital Goods",
+      "Chemical & Petrochemical",
+      "Service Sector",
+      "ALL"
+    ],
+    "business_types": [
+      "Sole Proprietorship",
+      "Partnership Firm",
+      "Self Help Group (SHG)",
+      "Cooperative Society",
+      "Trust"
+    ],
+    "project_stages": [
+      "Ideation / Planning",
+      "Pre-Construction",
+      "ALL"
+    ],
+    "investment_conditions": {
+      "min_investment": 100000.0,
+      "max_investment": 50000000.0,
+      "description": "Project cost up to ₹50 Lakhs for manufacturing sector and up to ₹20 Lakhs for service sector."
+    },
+    "eligibility_conditions": [
+      "Any individual above 18 years of age (minimum 8th standard pass for manufacturing projects over ₹10 Lakhs)",
+      "Only for newly established micro projects; existing units not eligible for Phase 1 capital subsidy",
+      "Beneficiary contribution of 5% (Special Category: SC/ST/OBC/Women/Ex-servicemen/Differently-abled) or 10% (General Category)",
+      "No income ceiling for setting up projects under PMEGP"
+    ],
+    "benefits": [
+      "Margin Money (Capital Subsidy) of 25% of project cost for General Category in Rural areas (15% in Urban areas)",
+      "Margin Money (Capital Subsidy) of 35% of project cost for Special Categories (Women, SC/ST, Minorities) in Rural areas (25% in Urban areas)",
+      "Second Loan for Upgradation: Up to ₹1 Crore for existing successful PMEGP units with 15% (20% for special) subsidy",
+      "Free Entrepreneurship Development Programme (EDP) training"
+    ],
+    "required_documents": [
+      "Aadhaar Card, PAN Card, and Caste/Special Category Certificate (if applicable)",
+      "Educational Qualification Certificate (8th standard mark sheet / Degree)",
+      "Detailed Project Report (DPR) with cost of plant, machinery, raw material and working capital",
+      "Rural Area Certificate issued by Gram Panchayat / Tehsildar (for rural subsidy rate)",
+      "Bank Account details and in-principle consent letter"
+    ],
+    "source": "PMEGP Official Portal & Operational Guidelines, Ministry of MSME, Government of India",
+    "last_verified_date": "2026-08-10"
+  },
+  {
+    "id": "scheme-cmegp-maharashtra",
+    "scheme_name": "Chief Minister Employment Generation Programme (CMEGP)",
+    "department": "Directorate of Industries, Government of Maharashtra",
+    "state": "Maharashtra",
+    "applicable_industries": [
+      "Manufacturing",
+      "Food Processing",
+      "Agro-processing",
+      "Textiles & Garments",
+      "Engineering & Capital Goods",
+      "Chemical & Petrochemical",
+      "Service Sector",
+      "ALL"
+    ],
+    "business_types": [
+      "Sole Proprietorship",
+      "Partnership Firm",
+      "Self Help Group (SHG)",
+      "Private Limited Company"
+    ],
+    "project_stages": [
+      "Ideation / Planning",
+      "Pre-Construction",
+      "ALL"
+    ],
+    "investment_conditions": {
+      "min_investment": 100000.0,
+      "max_investment": 50000000.0,
+      "description": "Manufacturing projects up to ₹50 Lakhs and Service/Agro-allied projects up to ₹20 Lakhs."
+    },
+    "eligibility_conditions": [
+      "Resident of Maharashtra between 18 to 45 years of age (up to 50 years for Special Category/SC/ST/Women)",
+      "Minimum 7th standard pass (10th standard pass for project cost above ₹25 Lakhs)",
+      "Promoter contribution of 5% (Special Category) or 10% (General Category)",
+      "Self-employment generation focus in Maharashtra"
+    ],
+    "benefits": [
+      "Financial assistance (Financial Subsidy) of 15% to 35% of the total project cost based on urban/rural location and category",
+      "Low promoter equity requirement (5% to 10%)",
+      "Bank loan facilitation through nationalized, private, and regional rural banks",
+      "Fast-track single-window clearance on the Maha-CMEGP portal"
+    ],
+    "required_documents": [
+      "Domicile Certificate of Maharashtra",
+      "Aadhaar Card, PAN Card, and Passport-size Photographs",
+      "School Leaving Certificate / Educational Marksheet",
+      "Detailed Project Profile with machinery and raw material quotations",
+      "Undertaking of not having availed subsidy under any other central/state self-employment scheme"
+    ],
+    "source": "Directorate of Industries, Maharashtra CMEGP Guidelines, GR No. CMEGP-2019/CR-145/IND-8",
+    "last_verified_date": "2026-08-20"
+  }
+]

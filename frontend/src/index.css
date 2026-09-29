@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1F2A44;
+  --color-navy-dark: #141C2E;
+  --color-navy-light: #2D3D60;
+  --color-navy-muted: #3F527E;
+
+  --color-beige: #E8DCC8;
+  --color-beige-light: #FAF6F0;
+  --color-beige-muted: #F2EAE0;
+  --color-beige-dark: #D6C4A8;
+
+  --color-gold: #C6A75E;
+  --color-gold-light: #DFC485;
+  --color-gold-dark: #A88B42;
+  --color-gold-muted: #EBD9AD;
+}
+
+@layer base {
+  :root {
+    --navy: #1F2A44;
+    --beige: #E8DCC8;
+    --gold: #C6A75E;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  * {
+    border-color: #E8DCC8;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: #FAF6F0;
+    color: #1F2A44;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(232, 220, 200, 0.45) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(198, 167, 94, 0.15) 0px, transparent 45%),
+      radial-gradient(at 50% 100%, rgba(31, 42, 68, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom Palette Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C6A75E;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A88B42;
+}
+
+/* Modern Enterprise Palette Glass & Panel Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #E8DCC8;
+  box-shadow: 0 4px 20px -2px rgba(31, 42, 68, 0.06);
+}
+
+.glass-card {
+  background: #ffffff;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #E8DCC8;
+  box-shadow: 0 1px 4px rgba(31, 42, 68, 0.04);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: #C6A75E;
+  box-shadow: 0 10px 25px -5px rgba(31, 42, 68, 0.10);
+  transform: translateY(-1px);
+}
+
+.glass-input {
+  background: #ffffff;
+  border: 1px solid #E8DCC8;
+  color: #1F2A44;
+  transition: all 0.15s ease;
+}
+
+.glass-input:focus {
+  border-color: #C6A75E;
+  box-shadow: 0 0 0 3px rgba(198, 167, 94, 0.25);
+  outline: none;
+}
+
+/* Button & Badge Palette Helpers */
+.btn-primary {
+  background: linear-gradient(135deg, #1F2A44 0%, #2D3D60 100%);
+  color: #FAF6F0;
+  border: 1px solid #1F2A44;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #141C2E 0%, #1F2A44 100%);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #C6A75E 0%, #DFC485 100%);
+  color: #1F2A44;
+  border: 1px solid #C6A75E;
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #A88B42 0%, #C6A75E 100%);
+  color: #FAF6F0;
+}
+
+.badge-navy {
+  background: #1F2A44;
+  color: #FAF6F0;
+}
+
+.badge-beige {
+  background: #E8DCC8;
+  color: #1F2A44;
+  border: 1px solid #D6C4A8;
+}
+
+.badge-gold {
+  background: rgba(198, 167, 94, 0.18);
+  color: #7A6225;
+  border: 1px solid #C6A75E;
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
