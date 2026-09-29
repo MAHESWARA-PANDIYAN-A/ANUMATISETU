@@ -8,7 +8,7 @@ from sqlalchemy import text
 from app.api.v1.router import api_router
 from app.core.config import settings
 from app.core.database import Base, check_db_connection, engine
-from app.db.seed import seed_departments
+from app.db.seed import seed_departments, seed_demo_users
 from app.db.seed_approval_intelligence import seed_approval_intelligence_all
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -62,6 +62,7 @@ def ensure_schema_updates():
                 conn.commit()
         logger.info("Database schema columns verified and up-to-date.")
         seed_departments()
+        seed_demo_users()
         seed_approval_intelligence_all()
     except Exception as e:
         logger.error(f"Error ensuring schema updates: {e}")
