@@ -20,7 +20,7 @@ from app.models.user import User
 
 logger = logging.getLogger(__name__)
 
-_raw_udyam_url = os.getenv("MOCK_UDYAM_BASE_URL", "http://localhost:8001").rstrip("/")
+_raw_udyam_url = os.getenv("MOCK_UDYAM_BASE_URL", "https://mock-msme-portal.onrender.com").rstrip("/")
 if _raw_udyam_url.endswith("/api/integrations/v1"):
     MOCK_UDYAM_BASE_URL = _raw_udyam_url[:-len("/api/integrations/v1")]
 else:
@@ -337,7 +337,7 @@ async def submit_udyam_application_headless(
     result_json = None
     last_error = None
     try:
-        async with httpx.AsyncClient(timeout=4.0) as client:
+        async with httpx.AsyncClient(timeout=20.0) as client:
             resp = await client.post(
                 f"{MOCK_UDYAM_BASE_URL}/api/integrations/v1/applications/direct-submit",
                 json=direct_payload,

@@ -21,7 +21,7 @@ from app.models.user import User
 logger = logging.getLogger(__name__)
 
 # Primary and fallback base URLs
-_raw_gst_url = os.getenv("MOCK_GST_BASE_URL", "http://localhost:8003").rstrip("/")
+_raw_gst_url = os.getenv("MOCK_GST_BASE_URL", "https://mock-gst-portal.onrender.com").rstrip("/")
 if _raw_gst_url.endswith("/api/integrations/v1"):
     MOCK_GST_BASE_URL = _raw_gst_url
 else:
@@ -407,7 +407,7 @@ async def submit_gst_application_headless(
 
     for base_url in [MOCK_GST_BASE_URL, FALLBACK_GST_BASE_URL]:
         try:
-            async with httpx.AsyncClient(timeout=4.0) as client:
+            async with httpx.AsyncClient(timeout=20.0) as client:
                 resp = await client.post(
                     f"{base_url}/applications/headless-submit",
                     json=headless_payload,

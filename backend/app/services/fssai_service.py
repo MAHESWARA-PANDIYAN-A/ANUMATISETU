@@ -20,7 +20,7 @@ from app.models.user import User
 
 logger = logging.getLogger(__name__)
 
-_raw_fssai_url = os.getenv("MOCK_FSSAI_BASE_URL", "http://127.0.0.1:8002").rstrip("/")
+_raw_fssai_url = os.getenv("MOCK_FSSAI_BASE_URL", "https://mock-fssai-portal.onrender.com").rstrip("/")
 if _raw_fssai_url.endswith("/api/integrations/v1"):
     MOCK_FSSAI_BASE_URL = _raw_fssai_url[:-len("/api/integrations/v1")]
     MOCK_FSSAI_INTEGRATION_URL = _raw_fssai_url
@@ -195,7 +195,7 @@ def sanitize_products(prods_raw: Any) -> List[Dict[str, Any]]:
 async def get_fssai_document_requirements() -> List[Dict[str, Any]]:
     """Fetches statutory document specifications from Mock FSSAI API dynamically."""
     try:
-        async with httpx.AsyncClient(timeout=4.0) as client:
+        async with httpx.AsyncClient(timeout=20.0) as client:
             resp = await client.get(f"{MOCK_FSSAI_BASE_URL}/api/v1/documents/requirements")
             if resp.status_code == 200:
                 data = resp.json()
@@ -348,7 +348,7 @@ async def submit_fssai_application_headless(
     uploaded_docs_count = 0
     
     try:
-        async with httpx.AsyncClient(timeout=5.0) as client:
+        async with httpx.AsyncClient(timeout=25.0) as client:
             # Step 1: Create & Prefill FSSAI Draft
             prefill_resp = await client.post(
                 f"{MOCK_FSSAI_INTEGRATION_URL}/applications/prefill",
