@@ -53,8 +53,55 @@ def register(user_in: UserCreate, db: Session = Depends(get_db)):
 def login(login_in: UserLogin, db: Session = Depends(get_db)):
     """
     Authenticates user credentials and issues a JWT bearer token.
+    Auto-provisions recognized demo accounts on fresh databases.
     """
-    user = db.query(User).filter(User.email == login_in.email.lower().strip()).first()
+    clean_email = login_in.email.lower().strip()
+    user = db.query(User).filter(User.email == clean_email).first()
+
+    # On-demand provisioning for standard demo accounts on fresh cloud databases
+    if not user and login_in.password == "Password123!":
+        from app.models.user import UserRole
+        demo_map = {
+            "applicant@demo.com": {
+                "name": "Ramesh Patel (Sunrise Agro)",
+                "role": UserRole.APPLICANT,
+                "phone": "+91 98200 12345",
+                "department": None
+            },
+            "officer.mpcb@gov.in": {
+                "name": "Dr. Ananya Deshmukh",
+                "role": UserRole.OFFICER,
+                "phone": "+91 98200 54321",
+                "department": "Maharashtra Pollution Control Board (MPCB)"
+            },
+            "cfo.fire@gov.in": {
+                "name": "Chief Officer V. K. Kadam",
+                "role": UserRole.OFFICER,
+                "phone": "+91 98200 67890",
+                "department": "Directorate of Maharashtra Fire Services"
+            },
+            "admin@sih26130.gov.in": {
+                "name": "System Administrator",
+                "role": UserRole.ADMIN,
+                "phone": "+91 98200 99999",
+                "department": "Department of Industries"
+            }
+        }
+        if clean_email in demo_map:
+            d = demo_map[clean_email]
+            user = User(
+                email=clean_email,
+                hashed_password=hash_password("Password123!"),
+                full_name=d["name"],
+                role=d["role"],
+                phone=d["phone"],
+                department=d["department"],
+                is_active=True
+            )
+            db.add(user)
+            db.commit()
+            db.refresh(user)
+
     if not user or not verify_password(login_in.password, user.hashed_password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
